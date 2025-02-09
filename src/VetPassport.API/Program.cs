@@ -1,4 +1,5 @@
 using Scalar.AspNetCore;
+using VetPassport.API.Endpoints;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,10 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.MapGet("/", () => "Hello world!");
+app.MapGet("/ping", () => "Pong!");
+app.MapAuthenticationEndpoints();
+app.MapUserEndpoints();
+app.MapPetEndpoints();
+app.MapVaccineEndpoints();
 
 app.Run();
