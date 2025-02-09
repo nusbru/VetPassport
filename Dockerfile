@@ -2,8 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Copia a solução e restaura a
-s dependências
+# Copia a solução e restaura as dependências
 COPY ./*.sln ./
 COPY ./src/VetPassport.API/*.csproj ./src/VetPassport.API/
 RUN dotnet restore ./src/VetPassport.API/VetPassport.API.csproj

@@ -1,0 +1,12 @@
+name: vetpassaport
+
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=vetpassaportdb
+      - POSTGRES_USER=vetpassaport_usr
+      - POSTGRES_PASSWORD=vetpassaport_pwd
+    ports:
+      - 5432:5432
